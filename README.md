@@ -17,5 +17,10 @@ Predict patient's in-hospital abnormal status for rapid response system
 
 ![Overall](https://user-images.githubusercontent.com/35287087/163349152-3e5ed442-0777-4b32-992f-0b1fff4fe670.png)
 
+- Proposed model: Temporal Variational Autoencoder (TVAE)
+
+![tvae](https://user-images.githubusercontent.com/35287087/163350134-c0ebd45c-2bfe-42a7-b5f4-a38b1f265b4b.png)
+
+
 - Install enviroment dependencies via 'requirement.txt'
 - Run CNUH_prediction.py for predict the outcome
