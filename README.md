@@ -22,5 +22,6 @@ Predict patient's in-hospital abnormal status for rapid response system
 ![tvae](https://user-images.githubusercontent.com/35287087/163350134-c0ebd45c-2bfe-42a7-b5f4-a38b1f265b4b.png)
 
 
-- Install enviroment dependencies via 'requirement.txt'
-- Run CNUH_prediction.py for predict the outcome
+- Running:
+  + Install enviroment dependencies via 'requirement.txt'
+  + Run 'CNUH_prediction.py' for predict the outcome
