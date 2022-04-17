@@ -1,3 +1,5 @@
+import os.path
+
 from common import *
 from models import *
 from CNUH_preprocess import *
@@ -44,8 +46,23 @@ def get_prediction_first(input_path, model_name):
         rs_prob = model.predict(X_test)
         rs_label = np.argmax(rs_prob, axis=1)
 
-    print('Abnormal probability after first 8 hours: ', rs_prob[0][1])
+    print('Abnormal probability: ', rs_prob[0][1])
     print('Abnormal(1)/normal(0) results: ', rs_label)
 
+
+def get_next_hours_prediction(new_ts_path, curr_window_path, model_name, save_path):
+    new_ts = pd.read_csv(new_ts_path)
+    old_window = pd.read_csv(curr_window_path)
+
+    new_window = old_window.loc[1:, :]
+    new_window = new_window.append(new_ts, ignore_index = True)
+
+    new_path = os.path.join(save_path,'new_window.csv')
+    new_window.to_csv(new_path, index=False)
+    return get_prediction_first(new_path, model_name)
+
+
+
 #predict
-get_prediction_first('data_path/Input_data_sample.csv', 'tvae')
+#get_prediction_first('data_path/Input_data_sample.csv', 'tvae')
+get_next_hours_prediction('data_path/Input_data_sample.csv', 'data_path/Sample_patient_measurement.csv', 'tvae', save_path=data_path)
