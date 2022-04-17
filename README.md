@@ -24,5 +24,6 @@ Predict patient's in-hospital abnormal status for rapid response system
 
 # Running:
   + Install enviroment dependencies via 'requirement.txt'
+  + Install torch: conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
   + Configure the file path on the functions
   + Run 'CNUH_prediction.py' for predict the outcome
