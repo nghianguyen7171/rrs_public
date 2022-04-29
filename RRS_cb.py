@@ -569,7 +569,7 @@ def get_next_hours_prediction(new_ts_path, curr_window_path, model_name, save_pa
 
 #predict
 #Run step 1
-#get_prediction_first('data_path/Input_data_sample.csv', 'tvae')
+get_prediction_first('data_path/Input_data_sample.csv', 'tvae')
 
 #Run step 2
 get_next_hours_prediction('data_path/Input_data_sample.csv', 'data_path/Sample_patient_measurement.csv', 'tvae', save_path=data_path)
